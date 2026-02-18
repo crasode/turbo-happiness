@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stonnex Roofing | Premium Roofing for British Columbia</title>
+    <meta
+      name="description"
+      content="Stonnex Roofing delivers premium residential roofing experiences built for Pacific Northwest conditions."
+    />
+    <meta property="og:title" content="Stonnex Roofing" />
+    <meta
+      property="og:description"
+      content="Premium roofing systems with modern design, precise execution, and clear communication."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/media/hero/hero-vancouver.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="grain"></div>
+    <header class="site-header" id="siteHeader">
+      <div class="container nav-wrap">
+        <a class="logo" href="index.html">
+          <span class="logo-mark">SX</span>
+          <span class="logo-text">
+            <strong>STONNEX</strong>
+            <small>ROOFING DIVISION</small>
+          </span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <nav id="siteNav">
+          <a href="index.html" data-nav="home">Home</a>
+          <a href="services.html" data-nav="services">Services</a>
+          <a href="service-areas.html" data-nav="service-areas">Service Areas</a>
+          <a href="about.html" data-nav="about">About</a>
+          <a href="reviews.html" data-nav="reviews">Reviews</a>
+          <a href="contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <a class="header-cta magnetic" href="contact.html">Book Inspection</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero spotlight" id="heroSection">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="assets/media/hero/hero-vancouver.jpg"
+        >
+          <source src="assets/media/hero/pnw-roofing-loop.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <p class="kicker reveal">Pacific Northwest Roofing Specialists</p>
+          <h1 class="reveal">Roofing Built for High-Expectation Homeowners</h1>
+          <p class="lead reveal">
+            Premium residential roofing designed for British Columbia weather conditions with clear communication, clean process, and polished results.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary magnetic" href="contact.html">Book Inspection</a>
+            <a class="btn btn-secondary" href="tel:+16043666140">Call (604) 366-6140</a>
+          </div>
+          <div class="trust-pills reveal">
+            <span>Licensed Operations</span>
+            <span>Fully Insured</span>
+            <span>Written Scope Clarity</span>
+            <span>Warranty Options Available</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title reveal">Trust Signals by Design</h2>
+          <div class="trust-grid">
+            <article class="card reveal card-hover">
+              <h3>Structured Scope</h3>
+              <p>Clear options, sequencing, and deliverables before work begins.</p>
+            </article>
+            <article class="card reveal card-hover">
+              <h3>Detail Discipline</h3>
+              <p>Transitions, edges, and penetrations handled with precision.</p>
+            </article>
+            <article class="card reveal card-hover">
+              <h3>Communication Rhythm</h3>
+              <p>Consistent updates at each project checkpoint.</p>
+            </article>
+            <article class="card reveal card-hover">
+              <h3>Professional Closeout</h3>
+              <p>Clean final walkthrough and documentation handoff.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section spotlight" id="servicesInteractive">
+        <div class="container services-module">
+          <div class="services-list card reveal">
+            <p class="kicker">Services</p>
+            <h2>Interactive Service Explorer</h2>
+            <p>Select a service to preview what the project path looks like.</p>
+            <div class="service-buttons" id="serviceButtons"></div>
+          </div>
+          <div class="services-preview card reveal" id="servicePreview">
+            <div class="preview-image-wrap">
+              <img id="servicePreviewImage" src="assets/media/work/home-estate.jpg" alt="Service Preview" loading="lazy" />
+            </div>
+            <div class="preview-content">
+              <h3 id="servicePreviewTitle">Roof Replacement</h3>
+              <p id="servicePreviewText">Full-system replacement with clean sequencing and precise installation.</p>
+              <ul id="servicePreviewBullets"></ul>
+              <a id="servicePreviewLink" class="btn btn-primary magnetic" href="roof-replacement.html">Open Service Page</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title reveal">Featured Work</h2>
+          <div class="work-grid" id="workGrid"></div>
+          <p class="caption">Images shown for illustrative purposes.</p>
+        </div>
+      </section>
+
+      <section class="section story-section" id="storySection">
+        <div class="container story-layout">
+          <div class="story-left card reveal">
+            <p class="kicker">Scroll Story</p>
+            <h2>Built for the Pacific Northwest</h2>
+            <div class="story-progress-track"><div class="story-progress" id="storyProgress"></div></div>
+            <div class="story-steps" id="storySteps"></div>
+          </div>
+          <div class="story-right card reveal">
+            <div class="story-sticky">
+              <img id="storyImage" src="assets/media/detail/install-close.jpg" alt="Story Visual" loading="lazy" />
+              <div class="story-image-label" id="storyLabel">Rain</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title reveal">The Stonnex Standard</h2>
+          <div class="standard-grid" id="standardGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="reviewsSection">
+        <div class="container">
+          <h2 class="section-title reveal">Demo Review Experience</h2>
+          <div class="reviews-shell card reveal">
+            <div class="reviews-track" id="reviewsTrack"></div>
+            <p class="small-label">Data source placeholder for later integration</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title reveal">Service Areas</h2>
+          <div class="areas-module card reveal">
+            <div class="areas-banner">
+              <img src="assets/media/location/vancouver-aerial.jpg" alt="Service Areas" loading="lazy" />
+            </div>
+            <div class="areas-content">
+              <div class="region-chips" id="regionChips"></div>
+              <div class="cities-grid" id="citiesGrid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="form-shell card reveal">
+            <div class="form-head">
+              <div>
+                <p class="kicker">Conversion</p>
+                <h2>Book Inspection</h2>
+              </div>
+              <span class="step-badge" id="stepBadge">Step 1 of 2</span>
+            </div>
+            <div class="step-progress"><div class="step-progress-fill" id="stepProgressFill"></div></div>
+            <form id="inspectionForm" novalidate>
+              <div class="form-step" id="formStep1">
+                <label>Name<input type="text" name="name" required /></label>
+                <label>Phone<input type="tel" name="phone" required /></label>
+                <label>Email<input type="email" name="email" required /></label>
+                <label>Address<input type="text" name="address" /></label>
+                <label>
+                  Service Type
+                  <select name="service" required>
+                    <option value="">Select service</option>
+                    <option>Roof Replacement</option>
+                    <option>Cedar to Asphalt Conversion</option>
+                    <option>Emergency Leak Repair</option>
+                    <option>Metal Roofing</option>
+                    <option>Flat Roofing</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-step hidden" id="formStep2">
+                <label>Project Notes<textarea name="notes" rows="5"></textarea></label>
+                <label>Optional File Upload<input type="file" name="file" /></label>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary hidden" id="backBtn">Back</button>
+                <button type="submit" class="btn btn-primary magnetic" id="nextBtn">Continue</button>
+              </div>
+            </form>
+            <div class="success hidden" id="formSuccess">
+              <h3>Request received</h3>
+              <p>This is a demo success state. Connect this form to your production endpoint when ready.</p>
+              <button type="button" class="btn btn-secondary" id="resetFormBtn">Submit Another</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="kicker">Stonnex Roofing</p>
+          <p>Premium residential roofing systems designed for Pacific Northwest conditions.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="services.html">Services</a>
+          <a href="service-areas.html">Service Areas</a>
+          <a href="about.html">About</a>
+          <a href="reviews.html">Reviews</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+16043666140">(604) 366-6140</a>
+          <a href="mailto:info@stonnexgroup.com">info@stonnexgroup.com</a>
+          <a href="contact.html">Book Inspection</a>
+        </div>
+      </div>
+    </footer>
+
+    <button class="floating-cta magnetic" onclick="location.href='contact.html'">Book Inspection</button>
+
+    <div class="work-modal hidden" id="workModal">
+      <div class="work-modal-backdrop" id="workModalBackdrop"></div>
+      <article class="work-modal-card card" id="workModalCard">
+        <button class="work-modal-close" id="workModalClose" aria-label="Close">×</button>
+        <img id="workModalImage" src="" alt="Work item" loading="lazy" />
+        <h3 id="workModalTitle"></h3>
+        <p>What this illustrates:</p>
+        <ul>
+          <li>Material and profile direction</li>
+          <li>Detail execution quality</li>
+          <li>Finish consistency and alignment</li>
+        </ul>
+        <a class="btn btn-primary magnetic" href="contact.html">Book Inspection</a>
+      </article>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
