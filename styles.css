@@ -80,6 +80,20 @@ body {
   text-decoration: none;
 }
 
+.logo-brand-mark {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.logo-brand-word {
+  width: 210px;
+  height: 42px;
+  object-fit: cover;
+  filter: brightness(1.35) contrast(1.25);
+}
+
 .logo-mark {
   width: 38px;
   height: 38px;
@@ -333,6 +347,74 @@ h1 {
   font-size: 14px;
 }
 
+.warranty-head {
+  max-width: 920px;
+}
+
+.warranty-head .lead {
+  margin-top: 14px;
+}
+
+.warranty-summary {
+  margin-top: 22px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.warranty-stat {
+  padding: 18px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.warranty-num {
+  font-family: Montserrat, Inter, sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #d5e8fb;
+}
+
+.warranty-stat h3 {
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.warranty-stat p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.warranty-grid {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.warranty-grid .card {
+  padding: 20px;
+}
+
+.warranty-grid p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.warranty-grid ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: #d9e8fa;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .services-module {
   display: grid;
   gap: 16px;
@@ -564,7 +646,8 @@ h1 {
   padding: 16px;
   display: flex;
   gap: 12px;
-  align-items: flex-start;
+  align-items: center;
+  min-height: 88px;
 }
 
 .standard-num {
@@ -579,8 +662,42 @@ h1 {
   font-weight: 700;
 }
 
+.standard-item p {
+  margin: 0;
+  line-height: 1.45;
+}
+
 .reviews-shell {
   padding: 18px;
+}
+
+.testimonial-video {
+  margin-bottom: 12px;
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.testimonial-copy p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.testimonial-video video {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #020406;
+  max-height: 440px;
+}
+
+.testimonial-download {
+  color: #d6e8fb;
+  font-size: 13px;
+  text-decoration: none;
+  width: fit-content;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  padding-bottom: 2px;
 }
 
 .reviews-track {
@@ -779,6 +896,22 @@ textarea {
   gap: 8px;
 }
 
+.form-note {
+  margin: 0;
+  color: #9bb1cb;
+  font-size: 12px;
+}
+
+.form-status {
+  margin: 0;
+  color: #dbe9fa;
+  font-size: 12px;
+}
+
+.form-status.error {
+  color: #fecdd3;
+}
+
 .success {
   margin-top: 16px;
   border-radius: 12px;
@@ -945,7 +1078,12 @@ textarea {
 
   .simple-grid,
   .cities-grid,
-  .standard-grid {
+  .standard-grid,
+  .warranty-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .warranty-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -963,6 +1101,11 @@ textarea {
 }
 
 @media (max-width: 860px) {
+  .logo-brand-word {
+    width: 160px;
+    height: 34px;
+  }
+
   .menu-toggle {
     display: inline-grid;
     place-items: center;
@@ -993,6 +1136,8 @@ textarea {
 
   .trust-pills,
   .trust-grid,
+  .warranty-summary,
+  .warranty-grid,
   .form-step,
   .simple-grid,
   .standard-grid,

@@ -1,4 +1,9 @@
 (() => {
+  const BRAND = {
+    icon: 'assets/media/brand/stonex-icon.png',
+    logo: 'assets/media/brand/stonex-logo.png'
+  };
+
   const SERVICES = [
     {
       key: 'roof-replacement',
@@ -148,6 +153,28 @@
   };
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setupBrand() {
+    const head = document.head;
+    if (head) {
+      let favicon = document.querySelector('link[rel="icon"]');
+      if (!favicon) {
+        favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        head.appendChild(favicon);
+      }
+      favicon.href = BRAND.icon;
+      favicon.type = 'image/png';
+    }
+
+    document.querySelectorAll('.logo').forEach((logo) => {
+      logo.setAttribute('aria-label', 'Stonex Roofing');
+      logo.innerHTML = `
+        <img class="logo-brand-mark" src="${BRAND.icon}" alt="Stonex icon" />
+        <img class="logo-brand-word" src="${BRAND.logo}" alt="Stonex Group" />
+      `;
+    });
+  }
 
   function initials(name) {
     const root = name.split(',')[0].trim();
@@ -490,6 +517,8 @@
     const next = document.getElementById('nextBtn');
     const success = document.getElementById('formSuccess');
     const resetBtn = document.getElementById('resetFormBtn');
+    const status = document.getElementById('formStatus');
+    const successText = success ? success.querySelector('p') : null;
     if (!form || !step1 || !step2 || !badge || !progress || !back || !next || !success || !resetBtn) return;
 
     let currentStep = 1;
@@ -536,14 +565,62 @@
         sync();
         return;
       }
-      form.classList.add('hidden');
-      success.classList.remove('hidden');
+      if (status) {
+        status.textContent = '';
+        status.classList.add('hidden');
+        status.classList.remove('error');
+      }
+      next.disabled = true;
+      next.textContent = 'Sending...';
+
+      const endpoint = (form.getAttribute('action') || '').trim();
+      if (!endpoint) {
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+        if (successText) {
+          successText.textContent = 'Request captured in demo mode. Add a form endpoint to receive live submissions.';
+        }
+        next.disabled = false;
+        sync();
+        return;
+      }
+
+      const formData = new FormData(form);
+      fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error('Request failed');
+          form.classList.add('hidden');
+          success.classList.remove('hidden');
+          if (successText) {
+            successText.textContent = 'Your request has been submitted to info@stonnexgroup.com. A coordinator will follow up shortly.';
+          }
+        })
+        .catch(() => {
+          if (!status) return;
+          status.textContent =
+            'We could not send this form right now. Please call (604) 366-6140 or email info@stonnexgroup.com.';
+          status.classList.remove('hidden');
+          status.classList.add('error');
+        })
+        .finally(() => {
+          next.disabled = false;
+          sync();
+        });
     });
 
     resetBtn.addEventListener('click', () => {
       form.reset();
       form.classList.remove('hidden');
       success.classList.add('hidden');
+      if (status) {
+        status.textContent = '';
+        status.classList.add('hidden');
+        status.classList.remove('error');
+      }
       currentStep = 1;
       sync();
     });
@@ -551,6 +628,7 @@
     sync();
   }
 
+  setupBrand();
   setupHeader();
   setupStandard();
   setupServices();
